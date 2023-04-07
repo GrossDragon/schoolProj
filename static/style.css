@@ -1,0 +1,82 @@
+table {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 14px;
+    background: white;
+    max-width: 70%;
+    width: 70%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+  th {
+    font-weight: normal;
+    color: rgb(1, 13, 39);
+    border-bottom: 2px solid #d3d3d3;
+    padding: 10px 8px;
+  }
+  td {
+    color: rgb(0, 0, 0);
+    padding: 9px 8px;
+    transition: .3s linear;
+  }
+
+
+  @import url('https://fonts.googleapis.com/css?family=Arimo');
+  .top-menu {
+    position: relative;
+    background: rgb(255, 255, 255);
+  }
+  .menu-main {
+    list-style: none;
+    margin-left: 23%;
+    padding: 0;
+  }
+  .menu-main:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .left-item {float: left;}
+  .right-item {float: right;}
+  .navbar-logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .menu-main a {
+    text-decoration: none;
+    display: inline-block;
+    line-height: 80px;
+    padding: 0 20px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-family: 'Arimo', sans-serif;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    transition: .3s linear;
+  }
+  .menu-main a:hover {background: rgb(177, 177, 177);}
+  @media (max-width: 830px) {
+  .menu-main {
+    padding-top: 90px;
+    text-align: center;
+  }
+  .navbar-logo {
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    transform: translateX(-50%);
+  }
+  .menu-main li {
+    float: none;
+    display: inline-block;
+  }
+  .menu-main a {
+    line-height: normal;
+    padding: 20px 15px;
+    font-size: 16px;
+  }
+  }
+  @media (max-width: 630px) {
+  .menu-main li {display: block;}
+  }

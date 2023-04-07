@@ -1,0 +1,54 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <h4 style="text-align: center; padding: 7%; font-size: 20px;">
+        Все книги в одном месте.
+    </h4>
+    
+    <div class="container">
+        <table class="table">
+            <tbody>
+              <tr>
+
+                {% comment %} <td align="center" style="padding-top: 2%;"> 
+                    <p><a href="market.html"><img src={% static 'pictures/p2.png' %} style=" width: 250px;"> </p>
+                    </a>
+                    <h2> "Мое имя - Джордж Флойд"</h2>
+                    <p> Роберт Самуэль</p>
+                </td>
+                <td align="center" style="padding-top: 2%;"> 
+                    <p><a href="market.html"><img src={% static 'pictures/p3.png' %} style=" width: 250px;"></p>
+                    </a>
+                    <h2> "Диалоги. Аппология сократа"</h2>
+                    <p> Платон</p>
+                </td>
+                <td align="center" style="padding-top: 2%;"> 
+                    <p><a href="market.html"><img src={% static 'pictures/p4.png' %} style=" width: 250px;"> </p>
+                    </a>
+                    <h2> "Халяльные инвестиции"</h2>
+                    <p> Лалэ</p>
+                </td> {% endcomment %}
+                
+                {%for book in books%}
+                    {%if forloop.counter|divisibleby:"4" %}
+                        </tr>
+                        <tr>
+                    {%endif%}
+
+                    <td align="center" style="padding-top: 2%;"> 
+                        <p><a href={% url 'book' book.id 0 %}><img src="{{ book.image.url }}" style=" width: 250px;"> </p>
+                        </a>
+                        <h2> {{ book.name }}</h2>
+                        <p> {{book.author}} </p>
+                    </td>
+            
+                {% endfor %}
+              </tr>
+
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+
